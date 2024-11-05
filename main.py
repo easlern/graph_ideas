@@ -3,13 +3,8 @@ import numpy
 
 
 def __main__():
-    a = [1,2,3]
-    print(str(x(a)))
-    print(str(srotx(a)))
-    print(str(y(a)))
-    print(str(sroty(a)))
-    print(str(z(a)))
-    print(str(srotz(a)))
+    a = [2,15,0]
+    print(str(add(a)))
 
 
 def srotx(a):
@@ -44,9 +39,9 @@ def addm(a,b):
     return r([a[d]+b[d] for d in range(len(a))])
 def add(a):
     # print(str(a))
-    a = addm(z(addm(a, [0, -a[1], 0])), [0, a[1], 0])
+    a = addm(srotz(addm(a, [0, -a[1], 0])), [0, a[1], 0])
     # print(str(a))
-    a = x(a)
+    a = srotx(a)
     # print(str(a))
     return a
 
